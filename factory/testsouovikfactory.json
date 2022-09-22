@@ -1,0 +1,9 @@
+{
+	"name": "testsouovikfactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e07d78ae-101f-4f48-ba4b-de11732cc2e5",
+		"tenantId": "ba11fe48-2e40-4cc7-a9cf-65f8bd3c49a2"
+	}
+}
