@@ -1,0 +1,7 @@
+{
+	"name": "PEP-DSDL-EA-SOUVIK-01",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/56ab1c0d-a1b3-49f1-8a28-5e1fac471eb7/resourceGroups/rgdb/providers/Microsoft.Sql/servers/sql-rg-dev-01",
+		"groupId": "sqlServer"
+	}
+}
