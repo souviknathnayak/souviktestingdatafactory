@@ -5,8 +5,8 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=sql-rg-dev-01.database.windows.net;initial catalog=sql-dev-01;user id=user_ro",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDQyQkY4MDdGLUI3MjAtNDIwQy1CM0VFLTBGODZBMjQ4REMzQV8xMTAzYmU4ZC1jNzE0LTRmY2MtYTNkZC04YWJlNTJmYjU1NjMiDQp9"
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=sql-rg-dev-01.database.windows.net;initial catalog=sql-css-demo;user id=user_ro",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDQyQkY4MDdGLUI3MjAtNDIwQy1CM0VFLTBGODZBMjQ4REMzQV82MzNhZTlmOS0wMDcxLTQ4Y2MtYTMxNi02MDlhOGExNDJlZTgiDQp9"
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntimeLS",
