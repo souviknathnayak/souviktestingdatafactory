@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "test_Dataflow",
+						"referenceName": "CSS_GlobalSuperStoreData",
 						"type": "DatasetReference"
 					},
 					"name": "Sink"
@@ -55,8 +55,14 @@
 				"     ignoreNoFilesFound: false) ~> Blobdata",
 				"Blobdata sink(allowSchemaDrift: true,",
 				"     validateSchema: true,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
 				"          RowID,",
 				"          OrderPriority,",
@@ -82,8 +88,7 @@
 				"          Quantityorderednew,",
 				"          Sales,",
 				"          OrderID",
-				"     ),",
-				"     format: 'table') ~> Sink"
+				"     )) ~> Sink"
 			]
 		}
 	}
