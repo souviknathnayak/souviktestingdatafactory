@@ -1,0 +1,81 @@
+{
+	"name": "Top10InstagramDataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "InstagramSourceDataset",
+						"type": "DatasetReference"
+					},
+					"name": "SourceInstagramData"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "SelectColumns"
+				},
+				{
+					"name": "FollowerCount"
+				},
+				{
+					"name": "RankDerived"
+				},
+				{
+					"name": "FilterDuplicateFollowerColumn"
+				},
+				{
+					"name": "filter1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          BRAND as string,",
+				"          {CATEGORIES 1} as string,",
+				"          {CATEGORIES 2} as string,",
+				"          FOLLOWERS as string,",
+				"          ER as string,",
+				"          {iPOSTS ON HASHTAG} as string,",
+				"          {MEDIA POSTED} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> SourceInstagramData",
+				"SourceInstagramData select(mapColumn(",
+				"          BRAND,",
+				"          {CATEGORIES 1},",
+				"          {CATEGORIES 2},",
+				"          FOLLOWERS",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelectColumns",
+				"SelectColumns derive(FollowersCount = toDouble(substringIndex(FOLLOWERS, 'M', 1))) ~> FollowerCount",
+				"FilterDuplicateFollowerColumn rank(desc(FollowersCount, true),",
+				"     output(RankDerived as long)) ~> RankDerived",
+				"FollowerCount select(mapColumn(",
+				"          BRAND,",
+				"          {CATEGORIES 1},",
+				"          {CATEGORIES 2},",
+				"          FollowersCount",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> FilterDuplicateFollowerColumn",
+				"RankDerived filter(RankDerived<=10) ~> filter1",
+				"filter1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
