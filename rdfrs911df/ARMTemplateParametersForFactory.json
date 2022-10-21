@@ -14,6 +14,9 @@
 		"AzureSqlDatabase2_connectionString": {
 			"value": ""
 		},
+		"GlobalSuperStoreData_connectionString": {
+			"value": ""
+		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://sdbkv.vault.azure.net/"
 		},
