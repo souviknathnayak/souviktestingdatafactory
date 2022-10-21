@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "Destination_Superstoredata",
 						"type": "DatasetReference"
 					}
 				]

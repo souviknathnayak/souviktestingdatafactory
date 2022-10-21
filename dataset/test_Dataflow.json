@@ -1,5 +1,5 @@
 {
-	"name": "Destination_Superstoredata",
+	"name": "test_Dataflow",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -10,13 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "DataOutput",
-				"folderPath": "Output",
-				"container": "globalsuperstore"
+				"fileName": "test",
+				"container": "hnsonerror"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []
