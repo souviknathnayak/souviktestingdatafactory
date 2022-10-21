@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "AzureSqlTable2",
 						"type": "DatasetReference"
 					},
 					"name": "Sink"
@@ -55,22 +55,41 @@
 				"     ignoreNoFilesFound: false) ~> Blobdata",
 				"Blobdata sink(allowSchemaDrift: true,",
 				"     validateSchema: true,",
-				"     input(",
-				"          EmployeeID as integer,",
-				"          EmployeeName as string,",
-				"          EmployeeEmailAdress as string,",
-				"          EmployeeContact as integer,",
-				"          EmployeeDesignation as string,",
-				"          EmployeeExperience as integer",
-				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
 				"     updateable:false,",
 				"     upsertable:false,",
+				"     recreate:true,",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> Sink"
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          RowID,",
+				"          OrderPriority,",
+				"          Discount,",
+				"          UnitPrice,",
+				"          ShippingCost,",
+				"          CustomerID,",
+				"          CustomerName,",
+				"          ShipMode,",
+				"          CustomerSegment,",
+				"          ProductCategory,",
+				"          ProductSubCategory,",
+				"          ProductContainer,",
+				"          ProductName,",
+				"          ProductBaseMargin,",
+				"          Region,",
+				"          StateorProvince,",
+				"          City,",
+				"          PostalCode,",
+				"          OrderDate,",
+				"          ShipDate,",
+				"          Profit,",
+				"          Quantityorderednew,",
+				"          Sales,",
+				"          OrderID",
+				"     )) ~> Sink"
 			]
 		}
 	}
