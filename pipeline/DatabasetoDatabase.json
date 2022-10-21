@@ -37,13 +37,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "Source_CSS_Demo",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable2",
+						"referenceName": "Destination_CSS_Demo",
 						"type": "DatasetReference"
 					}
 				]

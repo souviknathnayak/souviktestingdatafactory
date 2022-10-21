@@ -1,5 +1,5 @@
 {
-	"name": "AzureSqlTable2",
+	"name": "Destination_CSS_Demo",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSqlDatabase2",

@@ -1,5 +1,5 @@
 {
-	"name": "Blobdata",
+	"name": "Blob_Global_SuperStoreData",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",

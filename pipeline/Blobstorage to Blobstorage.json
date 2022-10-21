@@ -38,7 +38,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Blobdata",
+						"referenceName": "Blob_Global_SuperStoreData",
 						"type": "DatasetReference"
 					}
 				],

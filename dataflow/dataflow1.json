@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Blobdata",
+						"referenceName": "Blob_Global_SuperStoreData",
 						"type": "DatasetReference"
 					},
 					"name": "Blobdata"
@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "AzureSqlTable3",
+						"referenceName": "CSS_GlobalSuperStoreData",
 						"type": "DatasetReference"
 					},
 					"name": "Sink"
@@ -25,7 +25,7 @@
 			"scriptLines": [
 				"source(output(",
 				"          RowID as integer,",
-				"          OrderPriority as integer,",
+				"          OrderPriority as string,",
 				"          Discount as float,",
 				"          UnitPrice as float,",
 				"          ShippingCost as float,",
@@ -55,37 +55,11 @@
 				"     ignoreNoFilesFound: false) ~> Blobdata",
 				"Blobdata sink(allowSchemaDrift: true,",
 				"     validateSchema: true,",
-				"     input(",
-				"          RowID as integer,",
-				"          OrderPriority as integer,",
-				"          Discount as double,",
-				"          UnitPrice as double,",
-				"          ShippingCost as double,",
-				"          CustomerID as integer,",
-				"          CustomerName as string,",
-				"          ShipMode as string,",
-				"          CustomerSegment as string,",
-				"          ProductCategory as string,",
-				"          ProductSubCategory as string,",
-				"          ProductContainer as string,",
-				"          ProductName as string,",
-				"          ProductBaseMargin as double,",
-				"          Region as string,",
-				"          StateorProvince as string,",
-				"          City as string,",
-				"          PostalCode as integer,",
-				"          OrderDate as date,",
-				"          ShipDate as date,",
-				"          Profit as double,",
-				"          Quantityorderednew as integer,",
-				"          Sales as double,",
-				"          OrderID as integer",
-				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
 				"     updateable:false,",
 				"     upsertable:false,",
-				"     truncate:true,",
+				"     recreate:true,",
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
